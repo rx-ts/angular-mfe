@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core'
-import { CommonModule as _CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 
-import { CommonModule } from '@mfe/common'
+import { SharedModule } from '@mfe/shared'
+import { TestModule, TranslateModule } from '@mfe/common'
 
 import { HelloComponent } from './component'
-import { SharedModule } from '@mfe/shared'
 
 @NgModule({
   imports: [
-    _CommonModule,
     CommonModule,
     SharedModule,
+    TestModule,
+    TranslateModule,
     RouterModule.forChild([
       {
         path: '',

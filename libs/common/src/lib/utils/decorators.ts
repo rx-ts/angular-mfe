@@ -5,7 +5,7 @@
 
 import { BehaviorSubject } from 'rxjs'
 
-import { ObservableType } from './types'
+import { ObservableType } from '../types'
 
 const checkDescriptor = <T, K extends keyof T>(target: T, propertyKey: K) => {
   const oDescriptor = Object.getOwnPropertyDescriptor(target, propertyKey)

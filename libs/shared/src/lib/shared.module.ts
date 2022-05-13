@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core'
-import { CommonModule as _CommonModule } from '@angular/common'
-
-import { CommonModule } from '@mfe/common'
+import { CommonModule } from '@angular/common'
 
 import { RemoteComponent } from './remote'
+import { TestModule, TranslateModule } from '@mfe/common'
 
 @NgModule({
-  imports: [_CommonModule, CommonModule],
+  imports: [CommonModule, TestModule, TranslateModule],
   declarations: [RemoteComponent],
   exports: [RemoteComponent],
 })

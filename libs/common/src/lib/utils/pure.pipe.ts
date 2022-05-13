@@ -1,17 +1,11 @@
-/**
- * @packageDocumentation
- * @module utils
- */
-
 import { Pipe, PipeTransform } from '@angular/core'
+import { last } from 'lodash-es'
 
-import { IfEqual } from './types'
+import { IfEqual } from '../types'
 
 export type OmitFirst<T extends unknown[]> = T extends [unknown, ...infer R]
   ? R
   : []
-
-const last = <T>(values: T[]) => values?.[values.length - 1]
 
 @Pipe({
   name: 'pure',

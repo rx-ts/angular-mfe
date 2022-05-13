@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core'
-import { CommonModule as _CommonModule } from '@angular/common'
+import { CommonModule } from '@angular/common'
 
-import { CommonModule } from '@mfe/common'
 import { SharedModule } from '@mfe/shared'
 import { PasswordInputComponent } from './widgets'
+import { TestModule, TranslateModule } from '@mfe/common'
 
 @NgModule({
-  imports: [_CommonModule, CommonModule, SharedModule],
+  imports: [CommonModule, SharedModule, TestModule, TranslateModule],
   declarations: [PasswordInputComponent],
   exports: [PasswordInputComponent],
 })
