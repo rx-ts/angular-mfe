@@ -1,5 +1,3 @@
 export * from './lib/module'
-export * from './lib/pure.pipe'
-export * from './lib/test.pipe'
-export * from './lib/decorators'
-export * from './lib/types'
+export * from './lib/test'
+export * from './lib/utils'
