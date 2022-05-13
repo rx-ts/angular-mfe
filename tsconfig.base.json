@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mfe/common": ["libs/common/src"],
+      "@mfe/shared": ["libs/shared/src"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

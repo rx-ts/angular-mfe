@@ -1,0 +1,5 @@
+<ng-container *ngIf="remoteWidget$ | async as remoteWidget">
+  <ng-container
+    *ngComponentOutlet="remoteWidget.component; injector: remoteWidget.injector"
+  ></ng-container>
+</ng-container>
