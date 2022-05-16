@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+  pages: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -27,7 +31,9 @@ jobs:
         run: pnpm i --frozen-lockfile
 
       - name: Build
-        run: pnpm build
+        run: |
+          pnpm nx build main --baseHref=/angular-mfe/main/
+          pnpm nx build remote --baseHref=/angular-mfe/remote/
 
       - name: Setup Redirect
         run: cp .github/redirect.html dist/apps/index.html
@@ -35,6 +41,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          cname: angular-mfe.js.org
           commit_message: ${{ github.event.head_commit.message }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist/apps

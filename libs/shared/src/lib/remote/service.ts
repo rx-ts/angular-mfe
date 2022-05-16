@@ -13,7 +13,10 @@ export interface RemoteModuleDef {
 }
 
 // strangely it can not be inlined...
-const remoteURL = `${new URL(location.href).origin}/remote/`
+const remoteURL = `${location.href.slice(
+  0,
+  location.href.indexOf('/main'),
+)}/remote/`
 
 @Injectable({
   providedIn: 'root',
