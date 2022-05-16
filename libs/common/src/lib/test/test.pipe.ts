@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core'
+
 import { TestService } from './test.service'
 
 @Pipe({
@@ -9,6 +10,6 @@ export class TestPipe implements PipeTransform {
 
   transform(value: unknown) {
     const prefix = this.test.getPrefix()
-    return `${prefix ? prefix + ': ' : ''}${value}`
+    return `${prefix ? prefix + ': ' : ''}${String(value)}`
   }
 }

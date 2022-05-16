@@ -1,4 +1,5 @@
 import { Inject, Injectable } from '@angular/core'
+
 import { TOKEN_PREFIX } from './tokens'
 
 @Injectable({

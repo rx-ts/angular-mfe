@@ -1,8 +1,3 @@
-/**
- * @packageDocumentation
- * @module utils
- */
-
 import { BehaviorSubject } from 'rxjs'
 
 import { ObservableType } from '../types'
@@ -15,8 +10,10 @@ const checkDescriptor = <T, K extends keyof T>(target: T, propertyKey: K) => {
   }
 
   return {
-    oGetter: oDescriptor?.get,
-    oSetter: oDescriptor?.set,
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    oGetter: oDescriptor?.get as (() => T[K]) | undefined,
+    // eslint-disable-next-line @typescript-eslint/unbound-method
+    oSetter: oDescriptor?.set as ((value: T[K]) => void) | undefined,
     oDescriptor,
   }
 }
@@ -36,12 +33,12 @@ const strictCheckDescriptor = <T, K extends keyof T>(
   return oDescriptor
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function ValueHook<T = any, K extends keyof T = any>(
   setter?: (this: T, value?: T[K]) => boolean | void,
   getter?: (this: T, value?: T[K]) => T[K],
   afterSetter?: (this: T, value?: T[K]) => void,
 ) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return (target: T, propertyKey: K, _parameterIndex?: number) => {
     const { oGetter, oSetter } = checkDescriptor(target, propertyKey)
 
@@ -101,9 +98,10 @@ export function ObservableInput<
 
     type OT = ObservableType<T[OK]>
 
-    type Mixed = T & {
-      [symbol]: BehaviorSubject<OT>
-    } & Record<OK, BehaviorSubject<OT>>
+    type Mixed = Record<OK, BehaviorSubject<OT>> &
+      T & {
+        [symbol]?: BehaviorSubject<OT>
+      }
 
     // eslint-disable-next-line prefer-const
     let oPropertyValue: OT
@@ -134,7 +132,8 @@ export function ObservableInput<
     }
 
     const oDescriptor = strictCheckDescriptor(target, propertyKey)
-    oPropertyValue = oDescriptor ? oDescriptor.value : target[propertyKey]
+    oPropertyValue = // type-coverage:ignore-next-line
+      (oDescriptor ? oDescriptor.value : target[propertyKey]) as OT
 
     Object.defineProperty(target, propertyKey, {
       enumerable: true,

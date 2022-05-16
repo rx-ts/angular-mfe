@@ -104,6 +104,15 @@
           "nx serve remote"
         ]
       }
+    },
+    "build-mfe": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx build main",
+          "nx build remote"
+        ]
+      }
     }
   },
   "tags": []

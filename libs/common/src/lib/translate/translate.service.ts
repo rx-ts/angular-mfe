@@ -60,8 +60,6 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
 
   private readonly destroy$$ = new Subject<void>()
 
-  private readonly translationsList: Array<Readonly<Translations<L>>>
-
   constructor(
     @Inject(TOKEN_LOCALES)
     private readonly locales: L[],
@@ -70,15 +68,15 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
     @Inject(TOKEN_DEFAULT_LOCALE)
     public defaultLocale: L,
     @Inject(TOKEN_TRANSLATIONS)
-    translationsList: Array<Readonly<Translations<L>>>,
+    private readonly translationsList: Array<Readonly<Translations<L>>>,
     @Inject(TOKEN_LOOSE)
     private readonly loose: boolean,
     @Inject(TOKEN_BASE_HREF)
     private readonly baseHref: string,
     @Inject(TOKEN_REMOTE_TRANSLATIONS)
-    private remoteTranslationsList: Array<Readonly<Translations<L>>>,
+    private readonly remoteTranslationsList: Array<Readonly<Translations<L>>>,
     @Inject(TOKEN_REMOTE_URL)
-    private readonly remoteUrl: string | string[],
+    private readonly remoteUrl: string[] | string,
     private readonly injector: Injector,
   ) {
     this.translationsList = translationsList.filter(Boolean)
@@ -87,7 +85,7 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
 
     if (this.remoteUrl) {
       if (Array.isArray(this.remoteUrl)) {
-        this.remoteUrl.forEach(url => this.addRemoteTranslations(url))
+        for (const url of this.remoteUrl) this.addRemoteTranslations(url)
       } else {
         this.addRemoteTranslations(this.remoteUrl)
       }
@@ -157,6 +155,7 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
   /**
    * 手动添加语言包
    */
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   addRemoteTranslations(remoteUrl: string) {
     if (!remoteUrl) {
       return
@@ -186,7 +185,7 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
       ? forkJoin(
           this.locales.map(locale =>
             this.fetchTranslation(remoteUrl, locale).pipe(
-              catchError(error => {
+              catchError((error: unknown) => {
                 if (this.loose) {
                   const looseLocale = this._getLooseLocale(locale)
                   if (
@@ -209,7 +208,9 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
           ),
         ).pipe(map(_ => _.reduce(Object.assign)))
       : this.fetchTranslation(remoteUrl).pipe(
-          catchError(error => (isDevMode() ? throwError(() => error) : EMPTY)),
+          catchError((error: unknown) =>
+            isDevMode() ? throwError(() => error) : EMPTY,
+          ),
         )
     )
       .pipe(
@@ -220,9 +221,6 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
         if (!remoteTranslations) {
           return
         }
-        if (!this.remoteTranslationsList) {
-          this.remoteTranslationsList = []
-        }
         this.remoteTranslationsList.unshift(Object.freeze(remoteTranslations))
       })
   }
@@ -230,8 +228,12 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
   /**
    * 从远程 url 模板和区域获取翻译包
    */
-  fetchTranslation(remoteUrl: string): Observable<Translations<L>>
-  fetchTranslation(remoteUrl: string, locale: string): Observable<Translation>
+  fetchTranslation(remoteUrl: string): Observable<Translations<L> | undefined>
+  fetchTranslation(
+    remoteUrl: string,
+    locale: string,
+  ): Observable<Translation | undefined>
+
   fetchTranslation(remoteUrl: string, locale?: string) {
     if (isDevMode() && LOCALE_PLACEHOLDER_REGEX.test(remoteUrl) && !locale) {
       throw new TypeError(
@@ -248,7 +250,7 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
       return this.injector
         .get(HttpClient)
         .request('GET', url, { responseType })
-        .pipe(map(body => (isJSON ? body : load(body))))
+        .pipe(map((body: unknown) => (isJSON ? body : load(body as string))))
     }
     return ajax({
       url,
@@ -269,22 +271,24 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
   }
 
   private _getValue<T>(
-    source: Partial<Record<L, T>>,
+    source?: Partial<Record<L, T>>,
     locale = this.locale,
   ): T | void {
     if (!source) {
       return
     }
     let value = source[locale]
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (value == null && this.loose) {
       const looseLocale = this._getLooseLocale(locale)
       value =
         locale === looseLocale
-          ? Object.entries(source as T).find(
+          ? (Object.entries(source as T).find(
               ([key]) => locale === this._getLooseLocale(key),
-            )?.[1]
+            )?.[1] as Partial<Record<L, T>>[L])
           : source[looseLocale]
     }
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (value == null && locale !== this.defaultLocale) {
       return this._getValue(source, this.defaultLocale)
     }
@@ -295,8 +299,8 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
     key: string,
     locale = this.locale,
     translations: Translations<L>,
-  ): string | void {
-    const value = get(this._getValue(translations, locale), key)
+  ): string | undefined | void {
+    const value = get(this._getValue(translations, locale), key) as unknown
     if (value != null) {
       if (
         typeof value === 'object' &&
@@ -317,8 +321,8 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
   private _getBase(
     key: string,
     locale = this.locale,
-    translationsList: Array<Translations<L>>,
-  ): string | void {
+    translationsList?: Array<Translations<L>>,
+  ): string | undefined | void {
     if (!translationsList || translationsList.length === 0) {
       return
     }
@@ -351,11 +355,7 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
   }
 
   private _compareTranslationKeys() {
-    if (
-      !isDevMode() ||
-      !this.translationsList ||
-      this.translationsList.length < 2
-    ) {
+    if (!isDevMode() || this.translationsList.length < 2) {
       return
     }
 
@@ -382,9 +382,10 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
       return
     }
 
-    Object.entries(translation).forEach(([key, value]) => {
+    for (const [key, value] of Object.entries(translation)) {
+      // type-coverage:ignore-next-line
       if (!Object.prototype.hasOwnProperty.call(prevTranslation, key)) {
-        return
+        continue
       }
 
       const prevValue = prevTranslation[key]
@@ -398,7 +399,7 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
           prevValue as Translation,
           [...path, key],
         )
-        return
+        continue
       }
 
       if (!valueIsPlainObject && !prevValueIsPlainObject) {
@@ -413,6 +414,6 @@ export class TranslateService<L extends string = Locale> implements OnDestroy {
           )
         }
       }
-    })
+    }
   }
 }

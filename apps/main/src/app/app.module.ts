@@ -1,11 +1,12 @@
 import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule } from '@angular/router'
-import { TestModule, TranslateModule } from '@mfe/common'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component'
+
+import { TestModule, TranslateModule } from '@mfe/common'
 
 @NgModule({
   imports: [

@@ -1,11 +1,11 @@
-import { head } from 'lodash-es';
+import { head } from 'lodash-es'
 
-import { LOCALE_STORAGE } from './constants';
+import { LOCALE_STORAGE } from './constants'
 
 declare global {
   interface NavigatorLanguage {
-    browserLanguage?: string;
-    userLanguage?: string;
+    browserLanguage?: string
+    userLanguage?: string
   }
 }
 
@@ -13,13 +13,13 @@ export const getBrowserLang = () =>
   head(navigator.languages) ||
   navigator.language ||
   navigator.browserLanguage ||
-  navigator.userLanguage;
+  navigator.userLanguage
 
 export const getLang = <T extends string = string>(
-  LOCALES: T[],
+  LOCALES?: T[],
 ): T | undefined => {
-  const lang = (localStorage.getItem(LOCALE_STORAGE) || getBrowserLang()) as T;
+  const lang = (localStorage.getItem(LOCALE_STORAGE) || getBrowserLang()) as T
   return !LOCALES || LOCALES.length === 0 || LOCALES.includes(lang)
     ? lang
-    : LOCALES[0];
-};
+    : LOCALES[0]
+}

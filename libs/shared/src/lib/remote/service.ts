@@ -20,12 +20,17 @@ export class RemoteService {
     remote: 'http://localhost:4201/',
   }).pipe(
     tap(setRemoteDefinitions),
-    switchMap(() => loadRemoteModule('remote', './RemoteEntry')),
+    switchMap(
+      () =>
+        loadRemoteModule('remote', './RemoteEntry') as Promise<
+          Record<string, unknown>
+        >,
+    ),
     map(
-      (remoteModule: Record<string, unknown>) =>
+      remoteModule =>
         ({
-          module: remoteModule[remoteModule['REMOTE_MODULE'] as string],
-          widgets: remoteModule['REMOTE_WIDGETS'],
+          module: remoteModule[remoteModule.REMOTE_MODULE as string],
+          widgets: remoteModule.REMOTE_WIDGETS,
         } as RemoteModuleDef),
     ),
     shareReplay(1),

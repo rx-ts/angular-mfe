@@ -1,5 +1,8 @@
+import type { Config } from '@jest/types'
 import { getJestProjects } from '@nrwl/jest'
 
-export default {
-  projects: getJestProjects(),
+const config: Config.InitialOptions = {
+  projects: getJestProjects() as Config.InitialOptions['projects'],
 }
+
+export default config

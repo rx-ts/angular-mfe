@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs'
 
-export type Readonlyable<T> = T | Readonly<T>
+export type Readonlyable<T> = Readonly<T> | T
 
 export type AnyArray<T> = Readonlyable<T[]>
 
@@ -9,7 +9,7 @@ export type Arrayable<T, R extends boolean = false> = [R] extends [never]
   : R extends true
   ? Readonly<T> | readonly T[]
   : R extends false
-  ? Readonlyable<T> | AnyArray<T>
+  ? AnyArray<T> | Readonlyable<T>
   : never
 
 export type IfEqual<X, Y, A = X, B = never> = (<T>() => T extends X

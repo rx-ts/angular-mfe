@@ -1,5 +1,6 @@
-import { RemoteWidget } from '@mfe/shared'
 import { PasswordInputComponent } from './widgets'
+
+import { RemoteWidget } from '@mfe/shared'
 
 export const REMOTE_MODULE = 'RemoteModule'
 

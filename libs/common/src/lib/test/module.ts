@@ -1,7 +1,8 @@
 import { ModuleWithProviders, NgModule } from '@angular/core'
-import { TranslateModule } from '../translate'
-import { TestComponent } from './component'
 
+import { TranslateModule } from '../translate'
+
+import { TestComponent } from './component'
 import { TestPipe } from './test.pipe'
 import { TOKEN_PREFIX } from './tokens'
 
