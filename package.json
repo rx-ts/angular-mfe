@@ -11,6 +11,7 @@
     "lint:ngc": "run-p lint:ngc:*",
     "lint:ngc:main": "ngc --noEmit -p apps/main",
     "lint:ngc:remote": "ngc --noEmit -p apps/remote",
+    "postbuild": "cp tools/redirect.html dist/apps/index.html",
     "prepare": "ngcc -p es2015 && simple-git-hooks",
     "start": "sirv dist/apps",
     "test": "nx test",

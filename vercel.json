@@ -1,0 +1,11 @@
+{
+  "name": "angular-mfe",
+  "version": 2,
+  "alias": [
+    "angular-mfe.vercel.app",
+    "ng-mfe.vercel.app"
+  ],
+  "github": {
+    "silent": true
+  }
+}
