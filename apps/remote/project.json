@@ -23,7 +23,7 @@
         ],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/remote/webpack.config.mjs"
+          "path": "apps/remote/webpack.config.ts"
         }
       },
       "configurations": {

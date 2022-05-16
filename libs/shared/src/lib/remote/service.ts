@@ -1,4 +1,4 @@
-import { Injectable, Type } from '@angular/core'
+import { Injectable, isDevMode, Type } from '@angular/core'
 import { loadRemoteModule, setRemoteDefinitions } from '@nrwl/angular/mfe'
 import { map, of, shareReplay, switchMap, tap } from 'rxjs'
 
@@ -12,12 +12,15 @@ export interface RemoteModuleDef {
   widgets: RemoteWidget[]
 }
 
+// strangely it can not be inlined...
+const remoteURL = `${new URL(location.href).origin}/remote/`
+
 @Injectable({
   providedIn: 'root',
 })
 export class RemoteService {
   remoteModule$ = of<Record<string, string>>({
-    remote: 'http://localhost:4201/',
+    remote: isDevMode() ? 'http://localhost:4201/' : remoteURL,
   }).pipe(
     tap(setRemoteDefinitions),
     switchMap(

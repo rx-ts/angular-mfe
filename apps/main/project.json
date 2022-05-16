@@ -23,7 +23,7 @@
         ],
         "scripts": [],
         "customWebpackConfig": {
-          "path": "apps/main/webpack.config.mjs"
+          "path": "apps/main/webpack.config.ts"
         }
       },
       "configurations": {
@@ -109,8 +109,8 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          "nx build main",
-          "nx build remote"
+          "nx build main --baseHref=/main/",
+          "nx build remote --baseHref=/remote/"
         ]
       }
     }

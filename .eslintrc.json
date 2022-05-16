@@ -30,7 +30,9 @@
           "error",
           {
             "enforceBuildableLibDependency": true,
-            "allow": [],
+            "allow": [
+              "apps/remote/base.mfe.config"
+            ],
             "depConstraints": [
               {
                 "sourceTag": "*",
