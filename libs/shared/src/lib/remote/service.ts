@@ -15,7 +15,7 @@ export interface RemoteModuleDef {
 // strangely it can not be inlined...
 const remoteURL = `${location.href.slice(
   0,
-  location.href.indexOf('/main'),
+  location.href.search(/\/main($|(\/))/),
 )}/remote/`
 
 @Injectable({
