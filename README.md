@@ -1,4 +1,4 @@
-# AngularMfe
+# Angular MFE
 
 This project was generated using [Nx](https://nx.dev).
 

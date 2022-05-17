@@ -30,6 +30,9 @@ jobs:
       - name: Install Dependencies
         run: pnpm i --frozen-lockfile
 
+      - name: Delete Build Cache
+        run: rm -rf node_modules/.cache
+
       - name: Build
         run: pnpm build
 
@@ -40,5 +43,5 @@ jobs:
           commit_message: ${{ github.event.head_commit.message }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist/apps
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
