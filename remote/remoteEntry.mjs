@@ -100,7 +100,7 @@ __webpack_require__.d(exports, {
 /******/ 	// This function allow to reference async chunks
 /******/ 	__webpack_require__.u = (chunkId) => {
 /******/ 		// return url for filenames based on template
-/******/ 		return "" + chunkId + "." + {"59":"cc4bb70ec39a2f25","78":"32913a7bfbb8e936","106":"98e9d23c68b8939a","202":"71adaf2a9866e502","238":"7f7fec8d13bad690","301":"cbafc3d44ffd95b8","304":"11e644182b1feb33","343":"45a09a2a7cd9d405","378":"222829f6c998f3c3","406":"2d1e335c5dd43d95","642":"a59e54c8c9155c37","758":"ed5eab036571f5f5","909":"379f79821f59a68a"}[chunkId] + ".js";
+/******/ 		return "" + chunkId + "." + {"59":"cc4bb70ec39a2f25","78":"2cebf1a6bddb5e87","106":"98e9d23c68b8939a","202":"71adaf2a9866e502","238":"7f7fec8d13bad690","301":"cbafc3d44ffd95b8","304":"11e644182b1feb33","343":"45a09a2a7cd9d405","378":"222829f6c998f3c3","406":"2d1e335c5dd43d95","642":"a59e54c8c9155c37","758":"ed5eab036571f5f5","909":"379f79821f59a68a"}[chunkId] + ".js";
 /******/ 	};
 /******/ })();
 /******/ 
@@ -302,7 +302,7 @@ __webpack_require__.d(exports, {
 /******/ 
 /******/ /* webpack/runtime/publicPath */
 /******/ (() => {
-/******/ 	__webpack_require__.p = "/remote/";
+/******/ 	__webpack_require__.p = "/main/";
 /******/ })();
 /******/ 
 /******/ /* webpack/runtime/consumes */
