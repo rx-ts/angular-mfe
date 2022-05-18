@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router'
 import { HelloComponent } from './component'
 
 import { TestModule, TranslateModule } from '@mfe/common'
-import { SharedModule } from '@mfe/shared'
+import { SharedModule } from '@mfe/shared/shared.module'
 
 @NgModule({
   imports: [

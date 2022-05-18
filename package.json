@@ -58,6 +58,9 @@
     "type-coverage": "^2.21.1",
     "typescript": "^4.6.4"
   },
+  "resolutions": {
+    "webpack": "^5.72.1"
+  },
   "browserslist": [
     "extends @1stg/browserslist-config/modern"
   ],
@@ -72,6 +75,11 @@
   ],
   "markuplint": {
     "extends": "@1stg/markuplint-config/angular"
+  },
+  "pnpm": {
+    "overrides": {
+      "webpack": "^5.72.1"
+    }
   },
   "prettier": "@1stg/prettier-config/angular",
   "remarkConfig": {

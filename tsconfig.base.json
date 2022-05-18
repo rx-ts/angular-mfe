@@ -4,7 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@mfe/common": ["libs/common/src"],
-      "@mfe/shared": ["libs/shared/src"]
+      "@mfe/shared/*": ["libs/shared/src/lib/*"]
     },
     "rootDir": "."
   },
