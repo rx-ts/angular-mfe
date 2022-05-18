@@ -58,6 +58,9 @@
     "type-coverage": "^2.21.1",
     "typescript": "^4.6.4"
   },
+  "resolutions": {
+    "@nrwl/angular/webpack": "5.70.0"
+  },
   "browserslist": [
     "extends @1stg/browserslist-config/modern"
   ],
