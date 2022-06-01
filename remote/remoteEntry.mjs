@@ -5,7 +5,7 @@
 
 var moduleMap = {
 	"./RemoteEntry": () => {
-		return Promise.all([__webpack_require__.e(909), __webpack_require__.e(202), __webpack_require__.e(642), __webpack_require__.e(238)]).then(() => (() => ((__webpack_require__(4238)))));
+		return Promise.all([__webpack_require__.e(909), __webpack_require__.e(758), __webpack_require__.e(642), __webpack_require__.e(943)]).then(() => (() => ((__webpack_require__(4943)))));
 	}
 };
 var get = (module, getScope) => {
@@ -100,7 +100,7 @@ __webpack_require__.d(exports, {
 /******/ 	// This function allow to reference async chunks
 /******/ 	__webpack_require__.u = (chunkId) => {
 /******/ 		// return url for filenames based on template
-/******/ 		return "" + chunkId + "." + {"59":"cc4bb70ec39a2f25","106":"98e9d23c68b8939a","202":"71adaf2a9866e502","238":"7f7fec8d13bad690","301":"cbafc3d44ffd95b8","304":"11e644182b1feb33","343":"45a09a2a7cd9d405","378":"222829f6c998f3c3","406":"2d1e335c5dd43d95","642":"a59e54c8c9155c37","758":"ed5eab036571f5f5","789":"f107685313cae9fa","909":"379f79821f59a68a"}[chunkId] + ".js";
+/******/ 		return "" + chunkId + "." + {"22":"029c4cc97a148f9e","308":"95e446bb6bcf08e4","311":"2a73aac1d268b129","516":"d3512b8e45b2bbdf","528":"faad4973872cbf0f","642":"a59e54c8c9155c37","758":"9f633eb26a180e84","818":"65ce4161be60e2aa","832":"f207c0993a69dc77","877":"a4fc5a56a5144aab","909":"379f79821f59a68a","943":"77a36c5c2d9458fe","949":"6e480c4a1c296ec1"}[chunkId] + ".js";
 /******/ 	};
 /******/ })();
 /******/ 
@@ -263,13 +263,13 @@ __webpack_require__.d(exports, {
 /******/ 		var promises = [];
 /******/ 		switch(name) {
 /******/ 			case "default": {
-/******/ 				register("@angular/common/http", "13.3.8", () => (Promise.all([__webpack_require__.e(343), __webpack_require__.e(909), __webpack_require__.e(202), __webpack_require__.e(301), __webpack_require__.e(378)]).then(() => (() => (__webpack_require__(8301))))));
-/******/ 				register("@angular/common", "13.3.8", () => (Promise.all([__webpack_require__.e(909), __webpack_require__.e(406)]).then(() => (() => (__webpack_require__(6406))))));
-/******/ 				register("@angular/core", "13.3.8", () => (Promise.all([__webpack_require__.e(343), __webpack_require__.e(106)]).then(() => (() => (__webpack_require__(4106))))));
-/******/ 				register("@angular/platform-browser", "13.3.8", () => (Promise.all([__webpack_require__.e(909), __webpack_require__.e(202), __webpack_require__.e(304)]).then(() => (() => (__webpack_require__(9304))))));
-/******/ 				register("@angular/router", "13.3.8", () => (Promise.all([__webpack_require__.e(343), __webpack_require__.e(909), __webpack_require__.e(202), __webpack_require__.e(59)]).then(() => (() => (__webpack_require__(9059))))));
-/******/ 				register("@mfe/common", "0.0.0", () => (Promise.all([__webpack_require__.e(343), __webpack_require__.e(909), __webpack_require__.e(202), __webpack_require__.e(758)]).then(() => (() => (__webpack_require__(9758))))));
-/******/ 				register("@mfe/shared", "0.0.0", () => (Promise.all([__webpack_require__.e(343), __webpack_require__.e(909), __webpack_require__.e(202), __webpack_require__.e(789), __webpack_require__.e(642)]).then(() => (() => (__webpack_require__(9789))))));
+/******/ 				register("@angular/common/http", "13.3.8", () => (Promise.all([__webpack_require__.e(311), __webpack_require__.e(909), __webpack_require__.e(758), __webpack_require__.e(22), __webpack_require__.e(528)]).then(() => (() => (__webpack_require__(6022))))));
+/******/ 				register("@angular/common", "13.3.8", () => (Promise.all([__webpack_require__.e(909), __webpack_require__.e(818)]).then(() => (() => (__webpack_require__(9818))))));
+/******/ 				register("@angular/core", "13.3.8", () => (Promise.all([__webpack_require__.e(311), __webpack_require__.e(877)]).then(() => (() => (__webpack_require__(1877))))));
+/******/ 				register("@angular/platform-browser", "13.3.8", () => (Promise.all([__webpack_require__.e(909), __webpack_require__.e(758), __webpack_require__.e(516)]).then(() => (() => (__webpack_require__(516))))));
+/******/ 				register("@angular/router", "13.3.8", () => (Promise.all([__webpack_require__.e(311), __webpack_require__.e(909), __webpack_require__.e(758), __webpack_require__.e(308)]).then(() => (() => (__webpack_require__(3308))))));
+/******/ 				register("@mfe/common", "0.0.0", () => (Promise.all([__webpack_require__.e(311), __webpack_require__.e(909), __webpack_require__.e(758), __webpack_require__.e(832)]).then(() => (() => (__webpack_require__(3832))))));
+/******/ 				register("@mfe/shared", "0.0.0", () => (Promise.all([__webpack_require__.e(311), __webpack_require__.e(909), __webpack_require__.e(758), __webpack_require__.e(949), __webpack_require__.e(642)]).then(() => (() => (__webpack_require__(5949))))));
 /******/ 			}
 /******/ 			break;
 /******/ 		}
@@ -440,28 +440,28 @@ __webpack_require__.d(exports, {
 /******/ 	});
 /******/ 	var installedModules = {};
 /******/ 	var moduleToHandlerMapping = {
-/******/ 		1909: () => (loadSingletonVersionCheckFallback("default", "@angular/core", [1,13,3,8], () => (Promise.all([__webpack_require__.e(343), __webpack_require__.e(106)]).then(() => (() => (__webpack_require__(4106))))))),
-/******/ 		4758: () => (loadSingletonVersionCheckFallback("default", "@angular/common", [1,13,3,8], () => (__webpack_require__.e(406).then(() => (() => (__webpack_require__(6406))))))),
-/******/ 		4759: () => (loadSingletonVersionCheckFallback("default", "@angular/common/http", [1,13,3,8], () => (__webpack_require__.e(301).then(() => (() => (__webpack_require__(8301))))))),
-/******/ 		4642: () => (loadStrictSingletonVersionCheckFallback("default", "@mfe/common", [4,0,0,0], () => (Promise.all([__webpack_require__.e(343), __webpack_require__.e(758)]).then(() => (() => (__webpack_require__(9758))))))),
-/******/ 		9652: () => (loadStrictSingletonVersionCheckFallback("default", "@mfe/shared", [4,0,0,0], () => (Promise.all([__webpack_require__.e(343), __webpack_require__.e(789)]).then(() => (() => (__webpack_require__(9789)))))))
+/******/ 		1909: () => (loadSingletonVersionCheckFallback("default", "@angular/core", [1,13,3,8], () => (Promise.all([__webpack_require__.e(311), __webpack_require__.e(877)]).then(() => (() => (__webpack_require__(1877))))))),
+/******/ 		4758: () => (loadSingletonVersionCheckFallback("default", "@angular/common", [1,13,3,8], () => (__webpack_require__.e(818).then(() => (() => (__webpack_require__(9818))))))),
+/******/ 		4759: () => (loadSingletonVersionCheckFallback("default", "@angular/common/http", [1,13,3,8], () => (__webpack_require__.e(22).then(() => (() => (__webpack_require__(6022))))))),
+/******/ 		4642: () => (loadStrictSingletonVersionCheckFallback("default", "@mfe/common", [4,0,0,0], () => (Promise.all([__webpack_require__.e(311), __webpack_require__.e(832)]).then(() => (() => (__webpack_require__(3832))))))),
+/******/ 		9652: () => (loadStrictSingletonVersionCheckFallback("default", "@mfe/shared", [4,0,0,0], () => (Promise.all([__webpack_require__.e(311), __webpack_require__.e(949)]).then(() => (() => (__webpack_require__(5949)))))))
 /******/ 	};
 /******/ 	// no consumes in initial chunks
 /******/ 	var chunkMapping = {
-/******/ 		"202": [
-/******/ 			4758
-/******/ 		],
-/******/ 		"238": [
-/******/ 			9652
-/******/ 		],
 /******/ 		"642": [
 /******/ 			4642
 /******/ 		],
 /******/ 		"758": [
+/******/ 			4758
+/******/ 		],
+/******/ 		"832": [
 /******/ 			4759
 /******/ 		],
 /******/ 		"909": [
 /******/ 			1909
+/******/ 		],
+/******/ 		"943": [
+/******/ 			9652
 /******/ 		]
 /******/ 	};
 /******/ 	__webpack_require__.f.consumes = (chunkId, promises) => {
@@ -513,7 +513,7 @@ __webpack_require__.d(exports, {
 /******/ 				if(installedChunkData) {
 /******/ 					promises.push(installedChunkData[2]);
 /******/ 				} else {
-/******/ 					if(!/^(202|642|909)$/.test(chunkId)) {
+/******/ 					if(!/^(642|758|909)$/.test(chunkId)) {
 /******/ 						// setup Promise in chunk cache
 /******/ 						var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 						promises.push(installedChunkData[2] = promise);
