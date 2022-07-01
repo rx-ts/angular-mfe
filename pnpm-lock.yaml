@@ -32,7 +32,7 @@ specifiers:
   nx: 14.1.9
   rxjs: ^7.5.5
   sirv-cli: ^2.0.2
-  ts-jest: ^28.0.3
+  ts-jest: ^28.0.5
   ts-node: ^10.7.0
   tslib: ^2.4.0
   type-coverage: ^2.21.1
@@ -72,10 +72,10 @@ devDependencies:
   '@types/lodash-es': 4.17.6
   '@types/node': 17.0.34
   jest: 28.1.0_3sezc6gs5coetj25lugeybzyb4
-  jest-preset-angular: 12.0.1_qh5mzaxhfheclnaxiadlvtmsqu
+  jest-preset-angular: 12.0.1_zi4ug64aj5ropirw4ddppwwiqm
   nx: 14.1.9_typescript@4.6.4
   sirv-cli: 2.0.2
-  ts-jest: 28.0.3_qy5m32hwmbz5mebulkdtchzcz4
+  ts-jest: 28.0.5_uy2hwlw3b2xjbkk4v7x6v75ly4
   ts-node: 10.7.0_3smuweqyuzdazdnyhhezld6mfa
   type-coverage: 2.21.1_typescript@4.6.4
   typescript: 4.6.4
@@ -12196,7 +12196,7 @@ packages:
       jest-resolve: 28.1.0
     dev: true
 
-  /jest-preset-angular/12.0.1_qh5mzaxhfheclnaxiadlvtmsqu:
+  /jest-preset-angular/12.0.1_zi4ug64aj5ropirw4ddppwwiqm:
     resolution: {integrity: sha512-/3tpZTOhBE2Qmdga9jRTGu3OxgRfAzg2xDxtVSvR1SZvFZLHRik6jw+NznuirXtchgcYGt4tBE0wPDTJvtUeDw==}
     engines: {node: ^14.15.0 || >=16.10.0}
     peerDependencies:
@@ -12216,13 +12216,12 @@ packages:
       jest: 28.1.0_3sezc6gs5coetj25lugeybzyb4
       jest-environment-jsdom: 28.1.0
       pretty-format: 28.1.0
-      ts-jest: 28.0.3_44jgbygewvphnhcbkurqcvskii
+      ts-jest: 28.0.5_57b7e4jn3m4dg7wj4huecq72va
       typescript: 4.6.4
     optionalDependencies:
       esbuild: 0.14.39
     transitivePeerDependencies:
       - '@babel/core'
-      - '@types/jest'
       - babel-jest
       - bufferutil
       - canvas
@@ -19289,13 +19288,12 @@ packages:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: true
 
-  /ts-jest/28.0.3_44jgbygewvphnhcbkurqcvskii:
-    resolution: {integrity: sha512-HzgbEDQ2KgVtDmpXToqAcKTyGHdHsG23i/iUjfxji92G5eT09S1m9UHZd7csF0Bfgh9txM4JzwHnv7r1waFPlw==}
+  /ts-jest/28.0.5_57b7e4jn3m4dg7wj4huecq72va:
+    resolution: {integrity: sha512-Sx9FyP9pCY7pUzQpy4FgRZf2bhHY3za576HMKJFs+OnQ9jS96Du5vNsDKkyedQkik+sEabbKAnCliv9BEsHZgQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
       '@babel/core': '>=7.0.0-beta.0 <8'
-      '@types/jest': ^27.0.0
       babel-jest: ^28.0.0
       esbuild: '*'
       jest: ^28.0.0
@@ -19303,14 +19301,11 @@ packages:
     peerDependenciesMeta:
       '@babel/core':
         optional: true
-      '@types/jest':
-        optional: true
       babel-jest:
         optional: true
       esbuild:
         optional: true
     dependencies:
-      '@types/jest': 27.5.1
       bs-logger: 0.2.6
       esbuild: 0.14.39
       fast-json-stable-stringify: 2.1.0
@@ -19321,16 +19316,15 @@ packages:
       make-error: 1.3.6
       semver: 7.3.7
       typescript: 4.6.4
-      yargs-parser: 20.2.9
+      yargs-parser: 21.0.1
     dev: true
 
-  /ts-jest/28.0.3_qy5m32hwmbz5mebulkdtchzcz4:
-    resolution: {integrity: sha512-HzgbEDQ2KgVtDmpXToqAcKTyGHdHsG23i/iUjfxji92G5eT09S1m9UHZd7csF0Bfgh9txM4JzwHnv7r1waFPlw==}
+  /ts-jest/28.0.5_uy2hwlw3b2xjbkk4v7x6v75ly4:
+    resolution: {integrity: sha512-Sx9FyP9pCY7pUzQpy4FgRZf2bhHY3za576HMKJFs+OnQ9jS96Du5vNsDKkyedQkik+sEabbKAnCliv9BEsHZgQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     hasBin: true
     peerDependencies:
       '@babel/core': '>=7.0.0-beta.0 <8'
-      '@types/jest': ^27.0.0
       babel-jest: ^28.0.0
       esbuild: '*'
       jest: ^28.0.0
@@ -19338,14 +19332,11 @@ packages:
     peerDependenciesMeta:
       '@babel/core':
         optional: true
-      '@types/jest':
-        optional: true
       babel-jest:
         optional: true
       esbuild:
         optional: true
     dependencies:
-      '@types/jest': 27.5.1
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 28.1.0_3sezc6gs5coetj25lugeybzyb4
@@ -19355,7 +19346,7 @@ packages:
       make-error: 1.3.6
       semver: 7.3.7
       typescript: 4.6.4
-      yargs-parser: 20.2.9
+      yargs-parser: 21.0.1
     dev: true
 
   /ts-loader/9.3.0_gp3atwgq76mgimstdygasg64n4:
