@@ -302,7 +302,7 @@ __webpack_require__.d(exports, {
 /******/ 
 /******/ /* webpack/runtime/publicPath */
 /******/ (() => {
-/******/ 	__webpack_require__.p = "/remote/";
+/******/ 	__webpack_require__.p = "/main/";
 /******/ })();
 /******/ 
 /******/ /* webpack/runtime/consumes */
