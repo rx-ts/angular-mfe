@@ -34,7 +34,7 @@ specifiers:
   sirv-cli: ^2.0.2
   ts-jest: ^28.0.8
   ts-node: ^10.9.1
-  tslib: ^2.4.1
+  tslib: ^2.6.2
   type-coverage: ^2.21.1
   typescript: ^4.6.4
   zone.js: ^0.12.0
@@ -51,7 +51,7 @@ dependencies:
   js-yaml: 4.1.0
   lodash-es: 4.17.21
   rxjs: 7.5.7
-  tslib: 2.4.1
+  tslib: 2.6.2
   zone.js: 0.12.0
 
 devDependencies:
@@ -96,6 +96,7 @@ packages:
       postcss: 8.4.14
       stylelint: 14.8.5
     transitivePeerDependencies:
+      - '@babel/traverse'
       - '@swc/core'
       - '@swc/wasm'
       - enquirer
@@ -131,11 +132,12 @@ packages:
       babel-plugin-transform-async-to-promises: 0.8.18
       babel-plugin-transform-react-remove-prop-types: 0.4.24
       babel-plugin-transform-remove-console: 6.9.4
-      babel-plugin-transform-typescript-metadata: 0.3.2
+      babel-plugin-transform-typescript-metadata: 0.3.2_@babel+core@7.18.2
       babel-preset-proposal-typescript: 2.2.0_lbsq3xmrp6wnavdepcwj4diqnq
       core-js: 3.22.5
       fast-async: 7.0.6
     transitivePeerDependencies:
+      - '@babel/traverse'
       - supports-color
       - typescript
     dev: true
@@ -179,9 +181,10 @@ packages:
       npm-run-all: 4.1.5
       prettier: 2.6.2
       simple-git-hooks: 2.7.0
-      tslib: 2.4.1
+      tslib: 2.6.2
       yarn-deduplicate: 5.0.0
     transitivePeerDependencies:
+      - '@babel/traverse'
       - '@swc/core'
       - '@swc/wasm'
       - enquirer
@@ -712,7 +715,7 @@ packages:
       '@angular/core': 13.3.12
     dependencies:
       '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.12.0
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /@angular/cli/13.3.10:
     resolution: {integrity: sha512-MssGlWSFv2d8d6b0+ml0NLYWr/X+2FzIleaoEwkYnLeCTBrH07xghVkCbSk8OnTvEmuBcUcsNiPprpLFY4cGEw==}
@@ -754,7 +757,7 @@ packages:
     dependencies:
       '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.12.0
       rxjs: 7.5.7
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /@angular/compiler-cli/13.3.12_ykntn3hhgp6n6n66y2ne2wuksi:
     resolution: {integrity: sha512-6jrdVwexPihWlyitopc3rn2ReEkhAaMI8UWR0SOTnt3NaqNYWeio4bpeWlumgNPElDyY5rmyrmJgeaY8ICa8qA==}
@@ -773,7 +776,7 @@ packages:
       reflect-metadata: 0.1.13
       semver: 7.3.7
       sourcemap-codec: 1.4.8
-      tslib: 2.4.1
+      tslib: 2.6.2
       typescript: 4.6.4
       yargs: 17.5.1
     transitivePeerDependencies:
@@ -784,7 +787,7 @@ packages:
     resolution: {integrity: sha512-F5vJYrjbNvEWoVz9J/CqiT3Iod6g9bV0dGI5EeURcW4yHXHZ12ioQpfU3+bE7qXcTlnofbdDhK8cGxGx01SzBA==}
     engines: {node: ^12.20.0 || ^14.15.0 || >=16.10.0}
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /@angular/core/13.3.12_rxjs@7.5.7+zone.js@0.12.0:
     resolution: {integrity: sha512-jx0YC+NbPMbxGr5bXECkCEQv2RdVxR8AJNnabkPk8ZjwCpDzROrbELwwS1kunrZUhffcD15IhWGBvf1EGHAYDw==}
@@ -794,7 +797,7 @@ packages:
       zone.js: ~0.11.4
     dependencies:
       rxjs: 7.5.7
-      tslib: 2.4.1
+      tslib: 2.6.2
       zone.js: 0.12.0
 
   /@angular/forms/13.3.12_2t2bpfj4cznukshpuw3tvmcezy:
@@ -810,7 +813,7 @@ packages:
       '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.12.0
       '@angular/platform-browser': 13.3.12_acwdh3s5scpi27yetsnk333ipe
       rxjs: 7.5.7
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /@angular/language-service/13.3.12:
@@ -831,7 +834,7 @@ packages:
       '@angular/compiler': 13.3.12
       '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.12.0
       '@angular/platform-browser': 13.3.12_acwdh3s5scpi27yetsnk333ipe
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /@angular/platform-browser/13.3.12_acwdh3s5scpi27yetsnk333ipe:
     resolution: {integrity: sha512-sfhQqU4xjTJCjkH62TQeH5/gkay/KzvNDF95J6NHi/Q6p2dbtzZdXuLJKR/sHxtF2kc505z5v9RNm6XMSXM1KA==}
@@ -847,7 +850,7 @@ packages:
       '@angular/animations': 13.3.12_@angular+core@13.3.12
       '@angular/common': 13.3.12_akmha7wclo3jmfiis3pvxto3lq
       '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.12.0
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /@angular/router/13.3.12_2t2bpfj4cznukshpuw3tvmcezy:
     resolution: {integrity: sha512-X+TAxTAlqUd2gPm6drFBGVzQsbQWM5wmZ8S5D5i+86x7Ku0v2CUFICT6AUPSl9+FTPiexlL4FdmvQV2CnGTSUw==}
@@ -862,7 +865,7 @@ packages:
       '@angular/core': 13.3.12_rxjs@7.5.7+zone.js@0.12.0
       '@angular/platform-browser': 13.3.12_acwdh3s5scpi27yetsnk333ipe
       rxjs: 7.5.7
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: false
 
   /@assemblyscript/loader/0.10.1:
@@ -4121,7 +4124,7 @@ packages:
       glob: 7.2.3
       mustache: 4.2.0
       prettier: 2.6.2
-      tslib: 2.4.1
+      tslib: 2.6.2
       typescript: 4.6.4
     transitivePeerDependencies:
       - supports-color
@@ -4138,7 +4141,7 @@ packages:
       glob: 7.2.3
       jsonc: 2.0.0
       minimatch: 5.1.0
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4149,7 +4152,7 @@ packages:
       '@markuplint/ml-ast': 2.0.1-dev.20220307.0
       '@markuplint/parser-utils': 2.2.0
       parse5: 6.0.1
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4191,7 +4194,7 @@ packages:
       debug: 4.3.4
       dom-accessibility-api: 0.5.14
       postcss-selector-parser: 6.0.10
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4199,7 +4202,7 @@ packages:
   /@markuplint/ml-spec/2.1.0:
     resolution: {integrity: sha512-NrkyjaPqFXknElzRB0hACjBtBOkxQZ9kZeMRg7rV0UWxwE0JSIHPJ2NE3nuhbCI/dNy+i52sXvovKudn+MQGxQ==}
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: true
 
   /@markuplint/parser-utils/2.2.0:
@@ -4207,7 +4210,7 @@ packages:
     dependencies:
       '@markuplint/ml-ast': 2.0.1-dev.20220307.0
       '@markuplint/types': 2.1.0
-      tslib: 2.4.1
+      tslib: 2.6.2
       uuid: 8.3.2
     transitivePeerDependencies:
       - supports-color
@@ -4222,7 +4225,7 @@ packages:
       '@markuplint/types': 2.1.0
       debug: 4.3.4
       html-entities: 2.3.3
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4245,7 +4248,7 @@ packages:
       '@markuplint/html-parser': 2.2.1
       '@markuplint/ml-ast': 2.0.1-dev.20220307.0
       '@markuplint/parser-utils': 2.2.0
-      tslib: 2.4.1
+      tslib: 2.6.2
       vue-eslint-parser: 8.3.0_eslint@8.16.0
     transitivePeerDependencies:
       - eslint
@@ -4393,7 +4396,7 @@ packages:
       semver: 7.3.4
       ts-node: 9.1.1_typescript@4.6.4
       tsconfig-paths: 3.14.1
-      tslib: 2.4.1
+      tslib: 2.6.2
       webpack: 5.72.1
       webpack-merge: 5.7.3
     transitivePeerDependencies:
@@ -4447,7 +4450,7 @@ packages:
       ts-loader: 9.3.0_gp3atwgq76mgimstdygasg64n4
       tsconfig-paths: 3.14.1
       tsconfig-paths-webpack-plugin: 3.5.2
-      tslib: 2.4.1
+      tslib: 2.6.2
       webpack-node-externals: 3.0.0
     transitivePeerDependencies:
       - '@babel/core'
@@ -4477,7 +4480,7 @@ packages:
       nx: 14.1.9_typescript@4.6.4
       rxjs: 6.6.7
       semver: 7.3.4
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: true
 
   /@nrwl/eslint-plugin-nx/14.1.9_3iu52662lhbrbsqbvot7lu7hnm:
@@ -4521,7 +4524,7 @@ packages:
       jest-util: 27.5.1
       resolve.exports: 1.1.0
       rxjs: 6.6.7
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -4547,7 +4550,7 @@ packages:
       jest-util: 27.5.1
       resolve.exports: 1.1.0
       rxjs: 6.6.7
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -4571,7 +4574,7 @@ packages:
       '@nrwl/jest': 14.1.9_3iu52662lhbrbsqbvot7lu7hnm
       '@phenomnomnominal/tsquery': 4.1.1_typescript@4.6.4
       tmp: 0.2.1
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -4595,7 +4598,7 @@ packages:
       '@nrwl/jest': 14.1.9_u3hct3etyflpkcge2zchqdoyky
       '@phenomnomnominal/tsquery': 4.1.1_typescript@4.6.4
       tmp: 0.2.1
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -4677,7 +4680,7 @@ packages:
       rxjs: 6.6.7
       semver: 7.3.4
       tmp: 0.2.1
-      tslib: 2.4.1
+      tslib: 2.6.2
       yargs: 17.5.1
       yargs-parser: 21.0.1
     transitivePeerDependencies:
@@ -4721,7 +4724,7 @@ packages:
       rxjs: 6.6.7
       semver: 7.3.4
       tmp: 0.2.1
-      tslib: 2.4.1
+      tslib: 2.6.2
       yargs: 17.5.1
       yargs-parser: 21.0.1
     transitivePeerDependencies:
@@ -4773,7 +4776,7 @@ packages:
       imagemin-webp: 7.0.0
       is-glob: 4.0.3
       tiny-glob: 0.2.9
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: true
 
   /@pkgr/utils/2.1.0:
@@ -4785,7 +4788,7 @@ packages:
       open: 8.4.0
       picocolors: 1.0.0
       tiny-glob: 0.2.9
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: true
 
   /@pkgr/utils/2.2.0:
@@ -4797,7 +4800,7 @@ packages:
       open: 8.4.0
       picocolors: 1.0.0
       tiny-glob: 0.2.9
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: true
 
   /@polka/url/1.0.0-next.21:
@@ -4906,7 +4909,7 @@ packages:
       colorette: 2.0.16
       debug: 4.3.4
       pirates: 4.0.5
-      tslib: 2.4.1
+      tslib: 2.6.2
       typescript: 4.6.4
     transitivePeerDependencies:
       - supports-color
@@ -6542,9 +6545,16 @@ packages:
     resolution: {integrity: sha512-88blrUrMX3SPiGkT1GnvVY8E/7A+k6oj3MNvUtTIxJflFzXTw1bHkuJ/y039ouhFMp2prRn5cQGzokViYi1dsg==}
     dev: true
 
-  /babel-plugin-transform-typescript-metadata/0.3.2:
+  /babel-plugin-transform-typescript-metadata/0.3.2_@babel+core@7.18.2:
     resolution: {integrity: sha512-mWEvCQTgXQf48yDqgN7CH50waTyYBeP2Lpqx4nNWab9sxEpdXVeKgfj1qYI2/TgUPQtNFZ85i3PemRtnXVYYJg==}
+    peerDependencies:
+      '@babel/core': ^7
+      '@babel/traverse': ^7
+    peerDependenciesMeta:
+      '@babel/traverse':
+        optional: true
     dependencies:
+      '@babel/core': 7.18.2
       '@babel/helper-plugin-utils': 7.17.12
     dev: true
 
@@ -9090,7 +9100,7 @@ packages:
       remark-parse: 10.0.1
       remark-stringify: 10.0.2
       synckit: 0.7.1
-      tslib: 2.4.1
+      tslib: 2.6.2
       unified: 10.1.2
     transitivePeerDependencies:
       - supports-color
@@ -9239,7 +9249,7 @@ packages:
       eslint-plugin-utils: 0.3.0_eslint@8.16.0
       markuplint: 2.8.0
       synckit: 0.7.1
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9256,7 +9266,7 @@ packages:
       remark-mdx: 2.1.1
       remark-parse: 10.0.1
       remark-stringify: 10.0.2
-      tslib: 2.4.1
+      tslib: 2.6.2
       unified: 10.1.2
       vfile: 5.3.2
     transitivePeerDependencies:
@@ -12836,7 +12846,7 @@ packages:
     dependencies:
       copy-anything: 2.0.6
       parse-node-version: 1.0.1
-      tslib: 2.4.1
+      tslib: 2.6.2
     optionalDependencies:
       errno: 0.1.8
       graceful-fs: 4.2.10
@@ -13300,7 +13310,7 @@ packages:
       '@markuplint/ml-ast': 2.0.0
       '@markuplint/parser-utils': 2.2.0
       angular-html-parser: 1.8.0
-      tslib: 2.4.1
+      tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -13331,7 +13341,7 @@ packages:
       os-locale: 5.0.0
       strict-event-emitter: 0.2.4
       strip-ansi: 6.0.1
-      tslib: 2.4.1
+      tslib: 2.6.2
       uuid: 8.3.2
     transitivePeerDependencies:
       - supports-color
@@ -14575,7 +14585,7 @@ packages:
       tar-stream: 2.2.0
       tmp: 0.2.1
       tsconfig-paths: 3.14.1
-      tslib: 2.4.1
+      tslib: 2.6.2
       v8-compile-cache: 2.3.0
       yargs: 17.5.1
       yargs-parser: 21.0.1
@@ -17875,7 +17885,7 @@ packages:
   /rxjs/7.5.7:
     resolution: {integrity: sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA==}
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /sade/1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
@@ -18934,7 +18944,7 @@ packages:
     engines: {node: '>=12.20'}
     dependencies:
       '@pkgr/utils': 2.2.0
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: true
 
   /table/6.8.0:
@@ -19404,8 +19414,8 @@ packages:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: true
 
-  /tslib/2.4.1:
-    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
+  /tslib/2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
   /tsutils/3.21.0_typescript@4.6.4:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
@@ -19445,7 +19455,7 @@ packages:
       fast-glob: 3.2.11
       minimatch: 5.1.0
       normalize-path: 3.0.0
-      tslib: 2.4.1
+      tslib: 2.6.2
       tsutils: 3.21.0_typescript@4.6.4
       typescript: 4.6.4
     dev: true
@@ -20487,7 +20497,7 @@ packages:
       '@yarnpkg/lockfile': 1.1.0
       commander: 9.3.0
       semver: 7.3.7
-      tslib: 2.4.1
+      tslib: 2.6.2
     dev: true
 
   /yauzl/2.10.0:
@@ -20510,7 +20520,7 @@ packages:
   /zone.js/0.12.0:
     resolution: {integrity: sha512-XtC+I5dXU14HrzidAKBNMqneIVUykLEAA1x+v4KVrd6AUPWlwYORF8KgsVqvgdHiKZ4BkxxjvYi/ksEixTPR0Q==}
     dependencies:
-      tslib: 2.4.1
+      tslib: 2.6.2
 
   /zwitch/2.0.2:
     resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
