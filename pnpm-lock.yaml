@@ -23,7 +23,7 @@ specifiers:
   '@nrwl/workspace': ^14.1.9
   '@types/jest': 27.5.2
   '@types/js-yaml': ^4.0.5
-  '@types/lodash-es': ^4.17.6
+  '@types/lodash-es': ^4.17.12
   '@types/node': 17.0.34
   jest: 28.1.3
   jest-preset-angular: 12.2.6
@@ -69,7 +69,7 @@ devDependencies:
   '@nrwl/workspace': 14.1.9_i7griapldam6fgp5qb3rw5laka
   '@types/jest': 27.5.2
   '@types/js-yaml': 4.0.5
-  '@types/lodash-es': 4.17.6
+  '@types/lodash-es': 4.17.12
   '@types/node': 17.0.34
   jest: 28.1.3_av5zb7ncwo7u4znsmqe2aglhza
   jest-preset-angular: 12.2.6_jb5qajwh373pg2ozfdjmkrbeju
@@ -96,6 +96,7 @@ packages:
       postcss: 8.4.14
       stylelint: 14.8.5
     transitivePeerDependencies:
+      - '@babel/traverse'
       - '@swc/core'
       - '@swc/wasm'
       - enquirer
@@ -131,11 +132,12 @@ packages:
       babel-plugin-transform-async-to-promises: 0.8.18
       babel-plugin-transform-react-remove-prop-types: 0.4.24
       babel-plugin-transform-remove-console: 6.9.4
-      babel-plugin-transform-typescript-metadata: 0.3.2
+      babel-plugin-transform-typescript-metadata: 0.3.2_@babel+core@7.18.2
       babel-preset-proposal-typescript: 2.2.0_lbsq3xmrp6wnavdepcwj4diqnq
       core-js: 3.22.5
       fast-async: 7.0.6
     transitivePeerDependencies:
+      - '@babel/traverse'
       - supports-color
       - typescript
     dev: true
@@ -182,6 +184,7 @@ packages:
       tslib: 2.4.1
       yarn-deduplicate: 5.0.0
     transitivePeerDependencies:
+      - '@babel/traverse'
       - '@swc/core'
       - '@swc/wasm'
       - enquirer
@@ -5288,8 +5291,8 @@ packages:
       '@types/node': 17.0.34
     dev: true
 
-  /@types/lodash-es/4.17.6:
-    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+  /@types/lodash-es/4.17.12:
+    resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
     dependencies:
       '@types/lodash': 4.14.182
     dev: true
@@ -6542,9 +6545,16 @@ packages:
     resolution: {integrity: sha512-88blrUrMX3SPiGkT1GnvVY8E/7A+k6oj3MNvUtTIxJflFzXTw1bHkuJ/y039ouhFMp2prRn5cQGzokViYi1dsg==}
     dev: true
 
-  /babel-plugin-transform-typescript-metadata/0.3.2:
+  /babel-plugin-transform-typescript-metadata/0.3.2_@babel+core@7.18.2:
     resolution: {integrity: sha512-mWEvCQTgXQf48yDqgN7CH50waTyYBeP2Lpqx4nNWab9sxEpdXVeKgfj1qYI2/TgUPQtNFZ85i3PemRtnXVYYJg==}
+    peerDependencies:
+      '@babel/core': ^7
+      '@babel/traverse': ^7
+    peerDependenciesMeta:
+      '@babel/traverse':
+        optional: true
     dependencies:
+      '@babel/core': 7.18.2
       '@babel/helper-plugin-utils': 7.17.12
     dev: true
 
